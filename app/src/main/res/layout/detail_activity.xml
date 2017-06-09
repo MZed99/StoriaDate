@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:stretchColumns="0,1">
+
+        <TableRow>
+
+            <TextView
+                android:text="Data di Inizio:"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+
+                />
+
+            <TextView
+                android:text="Data di Fine:"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/data_inizio_tv"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="8dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                tools:text="1709" />
+
+            <TextView
+                android:id="@+id/data_fine_tv"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="8dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+        </TableRow>
+
+
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+
+        android:stretchColumns="0">
+
+        <TableRow>
+
+            <TextView
+                android:text="Heading:"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/heading_tv"
+                android:layout_width="100dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/back"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+                tools:text="Fine della scuola" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="Descrizione:"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/descrizione_tv"
+                android:layout_width="100dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="8dp"
+
+                tools:text="" />
+        </TableRow>
+    </TableLayout>
+    <ImageView
+        tools:src="@drawable/ic_add_black_24dp"
+        android:id="@+id/iv_detailActivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
