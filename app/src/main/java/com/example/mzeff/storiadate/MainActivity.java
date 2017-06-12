@@ -38,6 +38,9 @@ public class MainActivity extends AppCompatActivity implements EventiAdapter.Eve
     private TextView anno;
     private TextView head;
     private TextView body;
+    private TextView connectionLostError;
+    private TextView intData;
+    private TextView intTitolo;
     private RecyclerView recyclerView;
     private EventiAdapter eventiAdapter;
     private ArrayList<Evento> event;
@@ -142,8 +145,14 @@ public class MainActivity extends AppCompatActivity implements EventiAdapter.Eve
             recyclerView.setVisibility(View.VISIBLE);
 
             Log.v("ON POST EXECUTE", "LAUNCHED");
-            eventiAdapter.eventiAdapterSetData(eventos);
-            recyclerView.setAdapter(eventiAdapter);
+            if(eventos!=null){
+                eventiAdapter.eventiAdapterSetData(eventos);
+                recyclerView.setAdapter(eventiAdapter);
+            }else{
+                showErrorMessage();
+
+            }
+
         }
     }
 
@@ -164,5 +173,16 @@ public class MainActivity extends AppCompatActivity implements EventiAdapter.Eve
             startActivity(i);
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    void showErrorMessage(){
+        connectionLostError=(TextView) findViewById(R.id.connection_lost_msg);
+        connectionLostError.setVisibility(View.VISIBLE);
+        intData=(TextView) findViewById(R.id.data_textview);
+        intTitolo=(TextView) findViewById(R.id.avvenimenti_textview);
+        intTitolo.setVisibility(View.INVISIBLE);
+        intData.setVisibility(View.INVISIBLE);
+        recyclerView.setVisibility(View.INVISIBLE);
+
     }
 }
